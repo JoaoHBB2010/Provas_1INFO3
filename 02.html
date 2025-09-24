@@ -1,0 +1,32 @@
+<script>
+  /*
+    Calculadora de Juros
+    Você tem um array com os valores de contas não pagas: [50.00, 15.50, 120.00, 80].
+    Pergunte ao usuário quanto será o Juro aplicado nos valores que estão no Array. Considere que será a mesma taxa de juro para todos. 
+    Usando for...of, calcule o custo total de todas as contas já com o juro aplicado.
+    Apresente para o usuário qual será o valor final da compra.
+    */
+
+  //Entrada
+  let contasNaoPagas = [50.0, 15.5, 120.0, 80];
+  const juro = Number(prompt("Quanto será o juro aplicado?"));
+
+  //Processamento
+  let juros = 0;
+  let custo = 0;
+  let lista2 = [];
+  let final = 0;
+
+  for (let conta of contasNaoPagas) {
+    juros = (conta * juro) / 100;
+    custo = juros + conta;
+    lista2.push(custo);
+  }
+  for (let preco of lista2) {
+    final += preco;
+  }
+
+  //Saída
+  console.log(lista2);
+  document.write(`O valor total foi de ${final.toFixed(2)}`);
+</script>
