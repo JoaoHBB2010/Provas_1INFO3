@@ -12,26 +12,18 @@
    const desconto = Number(prompt("De Quanto será o desconto"));
 
    //Processamento
-   let produtosDesconto = [];
-   let descontamento = 0;
-   let valor = 0
+   let valor = 0;
    let lista = []; 
    let custo = 0;
+   let final = 0;
 
    for(let item of precos){
     if(item > 60){
-        produtosDesconto.push(item);
+    custo += item - ((item * desconto) / 100);
+    }else{
+    custo += item;    
     }
-   }
-
-   for(let item of produtosDesconto){
-    descontamento = item * desconto / 100
-    valor = item - descontamento
-    lista.push(valor);
-   }
-   for(let item of lista){
-    custo += item
-   }
+    }
 
    //Saída
    document.write(`O valor total da compra seŕa de ${custo.toFixed(2)}`);
