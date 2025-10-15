@@ -1,5 +1,5 @@
 <script>
-    /*
+  /*
     Calculadora de Descontos
     Você tem um array de preços de produtos que estão em um carrinho de compras: [50.00, 15.50, 120.00, 80].
     Peça ao usuário um percentual de desconto que será aplicado nos preços que estão contidos na lista.
@@ -7,23 +7,21 @@
     Apresente para o usuário qual será o valor final da compra.
     */
 
-   //Entrada
-   const precos = [50.00, 15.50, 120.00, 80];
-   const desconto = Number(prompt("De Quanto será o desconto"));
+  //Entrada
+  const precos = [50.0, 15.5, 120.0, 80];
+  const desconto = Number(prompt("De Quanto será o desconto"));
 
-   //Processamento
-   let valor = 0;
-   let custo = 0;
-   let final = 0;
+  //Processamento
+  let custo = 0;
 
-   for(let item of precos){
-    if(item > 60){
-    custo += item - ((item * desconto) / 100);
-    }else{
-    custo += item;    
+  for (let item of precos) {
+    if (item > 60) {
+      custo += item - (item * desconto) / 100;
+    } else {
+      custo += item;
     }
-    }
+  }
 
-   //Saída
-   document.write(`O valor total da compra seŕa de ${custo.toFixed(2)}`);
+  //Saída
+  document.write(`O valor total da compra seŕa de ${custo.toFixed(2)}`);
 </script>
