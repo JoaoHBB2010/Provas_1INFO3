@@ -21,5 +21,10 @@
    }
 
    //Saída
-   document.write(`As cidades que começam com  a letra ${letra} são: ${cidadesProcuradas}`);
+   if(cidadesProcuradas.length > 0){
+    document.write(`As cidades que começam com  a letra ${letra} são: ${cidadesProcuradas}`);
+   }
+   else{
+    alert("Nenhuma cidade da lista começa com a letra" + letra);
+   }
 </script>
