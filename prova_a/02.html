@@ -12,21 +12,12 @@
   const juro = Number(prompt("Quanto será o juro aplicado?"));
 
   //Processamento
-  let juros = 0;
   let custo = 0;
-  let lista2 = [];
-  let final = 0;
 
   for (let conta of contasNaoPagas) {
-    juros = (conta * juro) / 100;
-    custo = juros + conta;
-    lista2.push(custo);
-  }
-  for (let preco of lista2) {
-    final += preco;
+    custo += conta + ((conta * juro) / 100);
   }
 
   //Saída
-  console.log(lista2);
-  document.write(`O valor total foi de ${final.toFixed(2)}`);
+  document.write(`O valor total foi de ${custo.toFixed(2)}`);
 </script>
